@@ -1,0 +1,153 @@
+* {
+	box-sizing: border-box;
+}
+
+.adviser {
+	padding: 40px 0;
+	margin: 0 auto;
+	max-width: 1200px;
+	display: flex;
+}
+
+.autocomplete {
+	position: relative;
+	min-width: 240px;
+	max-width: 465px;
+}
+
+.autocomplete::before {
+	content: '';
+	position: absolute;
+	left: -1px;
+	right: -1px;
+	top: 0;
+	bottom: 0;
+	z-index: 1;
+	border: 2px solid #A1A0A8;
+}
+
+.autocomplete.-focused::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	z-index: 1;
+	left: -1px;
+	right: -1px;
+	border: 2px solid #F9B75D;
+}
+
+.autocomplete input {
+	position: relative;
+	padding: 1px 65px 0 10px;
+	margin: 0;
+	width: 100%;
+	height: 45px;
+	border: none;
+	font-size: 1em;
+	background: none;
+	box-shadow: none;
+	line-height: normal;
+	vertical-align: top;
+	align-items: center;
+	display: inline-flex;
+	outline: none;
+	box-sizing: border-box;
+	z-index: 2;
+}
+
+.autocomplete .list {
+	position: absolute;
+	width: 100%;
+	top: calc(100% + 10px);
+	left: 0;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.autocomplete .list-item {
+	padding: 6px;
+	height: 32px;
+	cursor: pointer;
+}
+
+.autocomplete .list-item span {
+	line-height: 16px;
+}
+
+.autocomplete .list-item:hover {
+	background-color: #E7E6EE;
+}
+
+.tip-window {
+	position: absolute;
+	top: calc(100% + 10px);
+	left: 0;
+	height: 40px;
+	line-height: 28px;
+	padding: 6px 15px;
+	z-index: 100;
+}
+
+.tip-window.-warn {
+	background-color: #FDC319;
+}
+
+.tip-window.-error {
+	background-color: #F1472A;
+	color: #fff;
+}
+
+.reset-button {
+	position: absolute;
+	top: 2px;
+	right: 2px;
+	width: 41px;
+	height: 41px;
+	border: 0;
+	visibility: hidden;
+	pointer-events: none;
+	outline: none;
+	cursor: pointer;
+	z-index: 10;
+}
+
+.reset-button.-active {
+	visibility: visible;
+	pointer-events: all;
+}
+
+.reset-button::before, .reset-button::after {
+	content: '';
+	position: absolute;
+	width: 2px;
+	height: 16px;
+	border-radius: 1px;
+	top: 50%;
+	left: 50%;
+	background-color: #A1A0A8;
+}
+
+.city-picker.-focused .reset-button::before,
+.city-picker.-focused .reset-button::after,
+.departure.-focused .reset-button::before,
+.departure.-focused .reset-button::after {
+	background-color: #F9B75D;
+}
+
+.reset-button::before {
+	transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.reset-button::after {
+	transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.departure {
+	margin-left: -1px;
+}
+
+
+
+

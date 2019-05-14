@@ -1,0 +1,266 @@
+.filter {
+    position: fixed;
+    top: 40px;
+    width: 320px;
+    height: calc(100vh - 40px);
+    overflow: auto;
+}
+
+.wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.-block {
+    display: block;
+    width: 100%;
+}
+
+.-flex {
+    display: flex;
+}
+
+.-align-center {
+    align-items: center;
+}
+
+.-jc-sp {
+    justify-content: space-between;
+}
+
+.-w50 {
+    width: 50%;
+}
+
+.-mb15 {
+    margin-bottom: 15px;
+}
+
+.-mt10 {
+    margin-top: 10px;
+}
+
+.row + .row {
+    margin-top: 15px;
+}
+
+.list {
+    position: relative;
+    margin: 0;
+    list-style: none;
+}
+
+.list li {
+    position: absolute;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 360px;
+}
+
+@media (min-width: 992px) {
+    .list li:nth-child(3n + 1) {
+        left: 0;
+    }
+
+    .list li:nth-child(3n + 2) {
+        left: 33.333333333%;
+    }
+
+    .list li:nth-child(3n) {
+        right: 0;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .list li:nth-child(2n + 1) {
+        left: 0;
+    }
+
+    .list li:nth-child(2n) {
+        right: 0;
+    }
+
+    .filter {
+        position: static;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        height: auto;
+    }
+
+    .filter > * {
+        width: 50%;
+        padding: 0 20px;
+        margin-bottom: 20px;
+    }
+
+    .filter > *:last-child {
+        order: -1;
+        width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .list li {
+        left: 0;
+        margin-bottom: 20px;
+    }
+
+    .filter {
+        position: static;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        height: auto;
+    }
+
+    .filter > * {
+        width: 100%;
+        padding: 0 20px;
+        margin-bottom: 20px;
+    }
+
+    .filter > *:last-child {
+        order: -1;
+        width: 100%;
+    }
+}
+
+.list li img {
+    position: relative;
+    height: 240px;
+    overflow: hidden;
+}
+
+.item {
+    position: relative;
+}
+
+.item-label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px 20px;
+    background: rgba(255,255,255, 0.9);
+    font-size: 20px;
+    font-weight: 700;
+    color: #dd580ce3;
+}
+
+.text {
+    padding: 10px 0;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.info-text.-big {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.-small {
+    font-weight: 400;
+}
+
+.-a50 {
+    opacity: .5;
+}
+
+.form-inline .form-group span {
+    display: inline-block;
+    vertical-align: middle;
+    width: 40px;
+    font-weight: 700;
+}
+
+.form-group .checkbox {
+    margin-top: 0;
+}
+
+.form-group label input {
+    font-weight: 400;
+}
+
+.header-row {
+    margin-bottom: 20px;
+    padding-left: 15px;
+}
+
+.header-row button + button {
+    margin-left: 15px;
+}
+
+.list .-no-data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    padding: 0 10%;
+    color: #8c8c8c;
+    text-align: center;
+}
+
+.list .-no-data img {
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+.list .-no-data p {
+    white-space: pre-wrap;
+}
+
+.preloader {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    top: 50px;
+    left: 0;
+    background-color: rgba(0, 0, 0, .4);
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.slider-wrapper {
+    padding: 40px 40px 0;
+}
+
+.preloader-body {
+    position: fixed;
+    display: flex;
+    width: 300px;
+    padding: 40px 30px;
+    top: 30%;
+    left: 50%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+.preloader-body::before {
+    display: block;
+    content: '';
+    margin-bottom: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    border-top-color: #07d;
+    animation: spinner .6s linear infinite;
+}
+
+.preloader.-show {
+    visibility: visible;
+    pointer-events: all;
+}
+
+@keyframes spinner {
+    100% {
+        transform: rotate(360deg);
+    }
+}
